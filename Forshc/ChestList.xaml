@@ -59,7 +59,7 @@
                 <Button x:Name="SortTxt2" Click="SortTxt2_Click" Content="Сортировка по использованию" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <materialDesign:Badged  Badge="{Binding  CountInCart}"  Foreground="Black" HorizontalAlignment="Right"   BadgeColorZoneMode="PrimaryLight" Margin="70 10 0 0" >
 
-                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"   Content="{materialDesign:PackIcon Kind=cart, Size=22}"  Background="#FFAEEA00" BorderBrush="#FFAEEA00" Foreground="Black" x:Name="BtnRemoveAll"  Cursor="Hand"   />
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"   Content="{materialDesign:PackIcon Kind=cart, Size=22}"  Background="#FFAEEA00" BorderBrush="#FFAEEA00" Foreground="Black" x:Name="BtnGoCarteAll" Click="BtnGoCarteAll_Click"   Cursor="Hand"   />
 
                 </materialDesign:Badged>
             </StackPanel>

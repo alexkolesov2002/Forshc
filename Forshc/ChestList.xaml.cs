@@ -149,5 +149,10 @@ namespace Forshc
 
 
         }
+
+        private void BtnGoCarteAll_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.Navigate(new PgCartForQuery(CartChests));
+        }
     }
 }

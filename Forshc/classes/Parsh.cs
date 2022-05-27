@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Forshc
 {
-    class Parsh
+    public partial class Chest
     {
+        public int CountChest { get; set; }
     }
 }

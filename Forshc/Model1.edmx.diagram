@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ebec9da543cb4416a22e218f7c690836" Name="Diagram1">
-        <EntityTypeShape EntityType="P_NotDellMeModel.Chest" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="P_NotDellMeModel.Chest" Width="1.5" PointX="8.625" PointY="1.125" />
         <EntityTypeShape EntityType="P_NotDellMeModel.History" Width="1.5" PointX="5.25" PointY="1" />
         <EntityTypeShape EntityType="P_NotDellMeModel.Roles" Width="1.5" PointX="0.75" PointY="1.375" />
         <EntityTypeShape EntityType="P_NotDellMeModel.Users" Width="1.5" PointX="3" PointY="1" />
