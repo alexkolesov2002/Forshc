@@ -1,0 +1,53 @@
+﻿<Page x:Class="Forshc.PgCartForQuery"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Forshc"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PgCartForQuery">
+    <Page.Resources>
+        <DataTemplate x:Key="ListS">
+            <Border BorderBrush="Black" BorderThickness="1" Width="500" Margin="10 0 0 0" Padding="0" Background="LightBlue">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Width="400">
+                            <TextBlock Text="   ">
+                        <Run Text="{Binding Id}"/>
+                        <Run Text="    "/>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Name}">
+                        <Run Text="    "/>
+                            </TextBlock>
+                            <TextBlock Text="{Binding isp}">
+                        <Run Text="    "/>
+                            </TextBlock>
+                        </StackPanel>
+
+
+                        <TextBlock Margin="10 0 0 0" >
+                            <Run Text="Количество:  "/>
+                            <Run Text="{Binding Kol_vo}"/>
+                        </TextBlock>
+
+                    </StackPanel>
+                    <Button  Padding="0" Uid="{Binding Id}" Click="Button_Click" Loaded="Button_Loaded" Name="sett">
+                        <materialDesign:PackIcon Kind="SettingsBox" Width="40" Margin="0" Padding="0"/>
+                    </Button>
+                    <Button  Padding="0" Uid="{Binding Id}" Click="AddCart_Click"  Name="AddCart">
+                        <materialDesign:PackIcon Kind="Plus" Width="40" Margin="0" Padding="0"/>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="77*"/>
+        </Grid.RowDefinitions>
+
+    </Grid>
+</Page>
