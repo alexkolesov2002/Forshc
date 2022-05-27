@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,16 @@ namespace Forshc
     /// <summary>
     /// Логика взаимодействия для ChestList.xaml
     /// </summary>
-    public partial class ChestList : Page
+    public partial class ChestList : Page, INotifyPropertyChanged
     {
         VModel VM = new VModel();
         List<Chest> chests;
         Users CurentUsers;
+        List<Chest> CartChests = new List<Chest>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int CountInCart { get; set; }
 
         public ChestList(Users cu)
         {
@@ -130,7 +136,17 @@ namespace Forshc
         {
             Button button = (Button)sender;
             int id = Convert.ToInt32(button.Uid);
-            
+            Chest chest = BaseConnect.BaseModel.Chest.FirstOrDefault(x=>x.Id == id );
+            CartChests.Add(chest);
+
+            List<Chest> chests = (List<Chest>) ListC.ItemsSource;
+            chests.Remove(chest);
+            PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
+            ListC.ItemsSource = chests;
+            ListC.Items.Refresh();
+
+
+
         }
     }
 }
