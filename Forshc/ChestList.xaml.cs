@@ -141,6 +141,7 @@ namespace Forshc
 
             List<Chest> chests = (List<Chest>) ListC.ItemsSource;
             chests.Remove(chest);
+            CountInCart = CartChests.Count;
             PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
             ListC.ItemsSource = chests;
             ListC.Items.Refresh();
