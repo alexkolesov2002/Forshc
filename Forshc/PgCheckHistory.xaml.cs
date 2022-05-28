@@ -66,5 +66,16 @@ namespace Forshc
                 printDialog.PrintVisual(ListHistory, "Отчет");
             }
         }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            int id = Convert.ToInt32(button.Uid);
+            History zapis = BaseConnect.BaseModel.History.FirstOrDefault(x => x.id == id);
+            List<History> histories = (List<History>)ListHistory.ItemsSource;
+            histories.Remove(zapis);
+            ListHistory.ItemsSource = histories;
+            ListHistory.Items.Refresh();
+        }
     }
 }

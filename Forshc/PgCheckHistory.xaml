@@ -38,15 +38,18 @@
                         </TextBlock>
 
                     </StackPanel>
-                   
+                    <Button  Padding="0" Uid="{Binding id}" Content="Подвердить заявку" Margin="20 0 0 0 " Width="150" Name="Delete" Click="Delete_Click">
+
+                    </Button>
                 </StackPanel>
             </Border>
         </DataTemplate>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="28*"/>
-            <RowDefinition Height="197*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="331*"/>
+            <RowDefinition Height="63*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" >
             <TextBlock Text="Выберите начальную дату " VerticalAlignment="Center"></TextBlock>
@@ -54,8 +57,8 @@
             <TextBlock Text="Выберите конечную дату " VerticalAlignment="Center"></TextBlock>
             <DatePicker Width="200"  x:Name="PO" Language="ru-rus" SelectedDateChanged="PO_SelectedDateChanged"></DatePicker>
         </StackPanel>
-          <ListView Grid.Row="1" x:Name="ListHistory" ItemTemplate="{StaticResource ListS}" Margin="0,0,0,-0.4" Grid.RowSpan="2"></ListView>
-        <StackPanel Orientation="Horizontal"  Grid.Row="1" HorizontalAlignment="Center">
+        <ListView Grid.Row="1" x:Name="ListHistory" ItemTemplate="{StaticResource ListS}"/>
+        <StackPanel Orientation="Horizontal"  Grid.Row="2" HorizontalAlignment="Center"  Width="480">
 
             <Button x:Name="BtnGoBack" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20" Width="200" Content="Назад"  Cursor="Hand" Click="BtnGoBack_Click"></Button>
             <Button x:Name="BtnAddHistory" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Margin="20" Content="Составить отчет"  Cursor="Hand" Click="BtnAddHistory_Click"></Button>
