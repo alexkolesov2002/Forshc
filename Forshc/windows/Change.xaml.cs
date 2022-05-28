@@ -72,7 +72,7 @@ namespace Forshc
 
                 }
             }
-            catch { }
+            catch { MessageBox.Show("Дуся"); }
         }
     }
 }

@@ -39,7 +39,7 @@ namespace Forshc
             try
             {
                 int i = Convert.ToInt32(IdenTxt.Text);
-                Chest c = BaseConnect.BaseModel.Chest.FirstOrDefault(x => x.Id == i && !x.isp.Contains("Не"));
+                Chest c = BaseConnect.BaseModel.Chest.FirstOrDefault(x => x.Id == i );
                 if (c != null)
                 {
                     nameTxt.Text = c.Name;
@@ -63,7 +63,7 @@ namespace Forshc
             {
                 int i = Convert.ToInt32(IdenTxt.Text);
                 Chest c = BaseConnect.BaseModel.Chest.FirstOrDefault(x => x.Id == i);
-                c.isp = "Не используется";
+                BaseConnect.BaseModel.Chest.Remove(c);
                 BaseConnect.BaseModel.SaveChanges();
                 MessageBox.Show("Оборудование списано!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
             }

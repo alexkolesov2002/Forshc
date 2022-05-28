@@ -32,6 +32,7 @@ namespace Forshc
             {
                 BtnGoWinAddUser.Visibility = Visibility.Visible;
                 del.Visibility = Visibility.Visible;
+                ChangeCount.Visibility = Visibility.Visible;
             }
         }
 
