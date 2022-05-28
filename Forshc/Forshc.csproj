@@ -83,6 +83,9 @@
     <Compile Include="PgCartForQuery.xaml.cs">
       <DependentUpon>PgCartForQuery.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PgCheckHistory.xaml.cs">
+      <DependentUpon>PgCheckHistory.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Roles.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PgCartForQuery.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PgCheckHistory.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

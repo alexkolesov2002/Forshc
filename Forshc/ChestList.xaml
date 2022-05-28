@@ -37,7 +37,7 @@
                     <Button  Padding="0" Uid="{Binding Id}" Click="Button_Click" Loaded="Button_Loaded" Name="sett">
                         <materialDesign:PackIcon Kind="SettingsBox" Width="40" Margin="0" Padding="0"/>
                     </Button>
-                    <Button  Padding="0" Uid="{Binding Id}" Click="AddCart_Click"  Name="AddCart">
+                    <Button  Padding="0" Uid="{Binding Id}" Click="AddCart_Click" Loaded="AddCart_Loaded"  Name="AddCart">
                         <materialDesign:PackIcon Kind="Plus" Width="40" Margin="0" Padding="0"/>
                     </Button>
                 </StackPanel>

@@ -34,6 +34,7 @@ namespace Forshc
                 BtnGoWinAddUser.Visibility = Visibility.Visible;
                 del.Visibility = Visibility.Visible;
                 ChangeCount.Visibility = Visibility.Visible;
+                BtnCheckHistory.Visibility = Visibility.Visible;
             }
         }
 
@@ -49,7 +50,7 @@ namespace Forshc
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            new Del().ShowDialog();
+            new Del(CurrentUser).ShowDialog();
           
         }
 
@@ -71,6 +72,11 @@ namespace Forshc
             new AddrUsers().ShowDialog();
             FrameMain.Navigate(new ChestList(CurrentUser));
 
+        }
+
+        private void BtnCheckHistory_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPages.MainFrame.Navigate(new PgCheckHistory());
         }
     }
 }

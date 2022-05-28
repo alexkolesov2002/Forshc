@@ -48,6 +48,14 @@ namespace Forshc
             Chest chest = BaseConnect.BaseModel.Chest.FirstOrDefault(x => x.Id == i);
             chest.Name = nameTxt.Text;
             chest.Kol_vo = kol_voTxt.Text;
+            if (ispcm.SelectedIndex == 0)
+            {
+                chest.isp = "Используется";
+            }
+            else
+            {
+                chest.isp = "Не используется";
+            }
             BaseConnect.BaseModel.SaveChanges();
         }
 

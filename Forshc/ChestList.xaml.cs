@@ -132,7 +132,7 @@ namespace Forshc
         {
             Button button = (Button)sender;
             int id = Convert.ToInt32(button.Uid);
-            new Cart(id).ShowDialog();
+            new Cart(id, CurentUsers).ShowDialog();
 
         }
 
@@ -168,6 +168,16 @@ namespace Forshc
         private void BtnGoCarteAll_Click(object sender, RoutedEventArgs e)
         {
             LoadPages.MainFrame.Navigate(new PgCartForQuery( CurentUsers));
+        }
+
+        private void AddCart_Loaded(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+
+            if (CurentUsers.id_role == 1)
+            {
+                button.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

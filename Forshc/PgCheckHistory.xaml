@@ -1,0 +1,64 @@
+﻿<Page x:Class="Forshc.PgCheckHistory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Forshc"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Title="PgCheckHistory">
+    <Page.Resources>
+        <DataTemplate x:Key="ListS">
+            <Border BorderBrush="Black" BorderThickness="1" Width="600" Margin="10 0 0 0" Padding="0" Background="LightBlue" >
+                <StackPanel Orientation="Horizontal" Width="600">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Width="400">
+                            <TextBlock Text="   ">
+                        <Run Text="{Binding id}"/>
+                        <Run Text="    "/>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Chest.Name}">
+                        <Run Text="    "/>
+                            </TextBlock>
+                            <TextBlock Text="{Binding Users.Name}">
+                        <Run Text="    "/>
+                            </TextBlock>
+                        </StackPanel>
+
+
+                        <TextBlock Margin="10 0 0 0" >
+                            <Run Text="Запрашиваемое количество:  "/>
+                            <Run Text="{Binding count}"/>
+                        </TextBlock>
+
+                        <TextBlock Margin="10 0 0 0" >
+                        <Run Text="Дата обращения:"/>
+                        <Run Text="{Binding dateaddr}" Language="ru-rus" />
+                        </TextBlock>
+
+                    </StackPanel>
+                   
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="197*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <TextBlock Text="Выберите начальную дату " VerticalAlignment="Center"></TextBlock>
+            <DatePicker x:Name="S" Width="200"  Language="ru-rus" SelectedDateChanged="S_SelectedDateChanged"></DatePicker>
+            <TextBlock Text="Выберите конечную дату " VerticalAlignment="Center"></TextBlock>
+            <DatePicker Width="200"  x:Name="PO" Language="ru-rus" SelectedDateChanged="PO_SelectedDateChanged"></DatePicker>
+        </StackPanel>
+          <ListView Grid.Row="1" x:Name="ListHistory" ItemTemplate="{StaticResource ListS}" Margin="0,0,0,-0.4" Grid.RowSpan="2"></ListView>
+        <StackPanel Orientation="Horizontal"  Grid.Row="1" HorizontalAlignment="Center">
+
+            <Button x:Name="BtnGoBack" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20" Width="200" Content="Назад"  Cursor="Hand" Click="BtnGoBack_Click"></Button>
+            <Button x:Name="BtnAddHistory" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Margin="20" Content="Составить отчет"  Cursor="Hand" Click="BtnAddHistory_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Forshc"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-        Height="450" Width="1000" ResizeMode="NoResize" 
+        Height="600" Width="1000" ResizeMode="NoResize" 
         WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Grid Background="#9cf">
@@ -83,6 +83,16 @@
                             Добавление 
                             <LineBreak/>
                            пользователя
+                            </TextBlock>
+                        </Grid>
+                    </Button>
+                    <Button  Margin="10" Height="48" Background="Orange" Click="BtnCheckHistory_Click" x:Name="BtnCheckHistory" Visibility="Collapsed">
+                        <Grid Width="100">
+                            <materialDesign:PackIcon Kind="ClipboardTextClockOutline" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-26,11,0,10.6"/>
+                            <TextBlock HorizontalAlignment="Right" Margin="0,0,-15, 0">
+                       Посмотреть
+                            <LineBreak/>
+                        запросы 
                             </TextBlock>
                         </Grid>
                     </Button>

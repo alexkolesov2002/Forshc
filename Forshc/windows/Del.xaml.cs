@@ -19,10 +19,11 @@ namespace Forshc
     /// </summary>
     public partial class Del : Window
     {
-        Users user;
+        Users user = new Users();
         public Del(Users CurrentUser)
         {
             InitializeComponent();
+            user = CurrentUser;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
