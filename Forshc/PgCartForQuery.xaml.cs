@@ -20,14 +20,14 @@ namespace Forshc
     /// </summary>
     public partial class PgCartForQuery : Page
     {
-        List<Chest> CartChest = new List<Chest>();
+   
         Users CurrentUser;
-        public PgCartForQuery(List<Chest> CartChest, Users CurrentUser)
+        public PgCartForQuery(Users CurrentUser)
 
         {
             InitializeComponent();
-            this.CartChest = CartChest;
-            ListC.ItemsSource = CartChest;
+        
+            ListC.ItemsSource =Myperem.ListLittleChest;
             this.CurrentUser = CurrentUser;
 
         }
@@ -93,8 +93,8 @@ namespace Forshc
         {
             Button button = (Button)sender;
             int id = Convert.ToInt32(button.Uid);
-            Myperem.ListBigChest.Add(CartChest.FirstOrDefault(x => x.Id == id));
-            CartChest.Remove(CartChest.FirstOrDefault(x => x.Id == id));
+            Myperem.ListBigChest.Add(Myperem.ListLittleChest.FirstOrDefault(x => x.Id == id));
+            Myperem.ListLittleChest.Remove(Myperem.ListLittleChest.FirstOrDefault(x => x.Id == id));
             ListC.Items.Refresh();
         }
     }

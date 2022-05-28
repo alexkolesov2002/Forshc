@@ -33,9 +33,11 @@ namespace Forshc
         public ChestList(Users cu)
         {
             InitializeComponent();
+            Myperem.ListBigChest =  Myperem.ListBigChest.OrderBy(x => x.Id).ToList();
             ListC.ItemsSource = Myperem.ListBigChest;
             ListC.Items.Refresh();
-
+            CountInCart = Myperem.ListLittleChest.Count;
+            PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
             CurentUsers = cu;
         }
 
@@ -139,11 +141,11 @@ namespace Forshc
             Button button = (Button)sender;
             int id = Convert.ToInt32(button.Uid);
             Chest chest = BaseConnect.BaseModel.Chest.FirstOrDefault(x=>x.Id == id );
-            CartChests.Add(chest);
+            Myperem.ListLittleChest.Add(chest);
 
             Myperem.ListBigChest  = (List<Chest>) ListC.ItemsSource;
             Myperem.ListBigChest.Remove(chest);
-            CountInCart = CartChests.Count;
+            CountInCart = Myperem.ListLittleChest.Count;
             PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
             ListC.ItemsSource = Myperem.ListBigChest;
             ListC.Items.Refresh();
@@ -154,7 +156,7 @@ namespace Forshc
 
         private void BtnGoCarteAll_Click(object sender, RoutedEventArgs e)
         {
-            LoadPages.MainFrame.Navigate(new PgCartForQuery(CartChests, CurentUsers));
+            LoadPages.MainFrame.Navigate(new PgCartForQuery( CurentUsers));
         }
     }
 }

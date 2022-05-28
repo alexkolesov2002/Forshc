@@ -9,6 +9,6 @@ namespace Forshc
     public static class Myperem
     {
         public static List<Chest> ListBigChest = BaseConnect.BaseModel.Chest.ToList();
-        public static List<Chest> ListLittleChest;
+        public static List<Chest> ListLittleChest = new List<Chest>();
     }
 }
