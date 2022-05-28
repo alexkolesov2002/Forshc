@@ -33,7 +33,7 @@
                 <ComboBoxItem Content="Используется"/>
                 <ComboBoxItem Content="Не используется"/>
             </ComboBox>
-            <Button x:Name="AddBtn" Content="Добавить" Style="{StaticResource MaterialDesignFlatButton}" Click="AddBtn_Click"/>
+            <Button x:Name="AddBtn" Content="Добавить" Style="{StaticResource MaterialDesignFlatButton}" Click="AddBtn_Click" Cursor="Hand"/>
         </StackPanel>
     </Grid>
 </Window>

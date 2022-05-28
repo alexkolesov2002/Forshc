@@ -115,6 +115,11 @@ namespace Forshc
                     BaseConnect.BaseModel.History.Add(history);
                 }
                 BaseConnect.BaseModel.SaveChanges();
+
+                MessageBox.Show("Заявка успешно составлена!", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                  Myperem.ListBigChest = BaseConnect.BaseModel.Chest.ToList();
+                Myperem.ListLittleChest = new List<Chest>();
+                LoadPages.MainFrame.GoBack();
             }
             catch
             {
