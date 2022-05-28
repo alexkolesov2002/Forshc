@@ -34,6 +34,8 @@ namespace Forshc
         {
             InitializeComponent();
             ListC.ItemsSource = Myperem.ListBigChest;
+            ListC.Items.Refresh();
+
             CurentUsers = cu;
         }
 
