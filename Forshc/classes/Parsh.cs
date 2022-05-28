@@ -8,6 +8,6 @@ namespace Forshc
 {
     public partial class Chest
     {
-        public int CountChest { get; set; }
+        public int CountChest { get; set; } = 1;
     }
 }

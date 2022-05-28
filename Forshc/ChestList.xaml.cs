@@ -32,14 +32,21 @@ namespace Forshc
 
         public ChestList(Users cu)
         {
-            InitializeComponent();
-            Myperem.ListBigChest = Myperem.ListBigChest.OrderBy(x => x.Id).ToList();
-            ListC.ItemsSource = Myperem.ListBigChest;
-            ListC.Items.Refresh();
-            CountInCart = Myperem.ListLittleChest.Count;
-            PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
-            CurentUsers = cu;
-        }
+            try
+            {
+                InitializeComponent();
+                Myperem.ListBigChest = Myperem.ListBigChest.OrderBy(x => x.Id).ToList();
+                ListC.ItemsSource = Myperem.ListBigChest;
+                ListC.Items.Refresh();
+                CountInCart = Myperem.ListLittleChest.Count;
+                PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
+                CurentUsers = cu;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка");
+            }
+            }
 
         private void SearchTxt_TextChanged(object sender, TextChangedEventArgs e)
         {

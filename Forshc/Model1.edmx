@@ -22,7 +22,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idUsers" Type="int" Nullable="false" />
           <Property Name="idChest" Type="int" Nullable="false" />
-          <Property Name="dateaddr" Type="date" Nullable="false" />
+          <Property Name="dateaddr" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="count" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
@@ -136,7 +136,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idUsers" Type="Int32" Nullable="false" />
           <Property Name="idChest" Type="Int32" Nullable="false" />
-          <Property Name="dateaddr" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dateaddr" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="count" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Chest" Relationship="P_NotDellMeModel.FK_History_Chest" FromRole="History" ToRole="Chest" />
           <NavigationProperty Name="Users" Relationship="P_NotDellMeModel.FK_History_Users" FromRole="History" ToRole="Users" />

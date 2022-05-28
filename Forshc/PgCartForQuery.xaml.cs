@@ -20,14 +20,14 @@ namespace Forshc
     /// </summary>
     public partial class PgCartForQuery : Page
     {
-   
+
         Users CurrentUser;
         public PgCartForQuery(Users CurrentUser)
 
         {
             InitializeComponent();
-        
-            ListC.ItemsSource =Myperem.ListLittleChest;
+
+            ListC.ItemsSource = Myperem.ListLittleChest;
             this.CurrentUser = CurrentUser;
 
         }
@@ -91,11 +91,35 @@ namespace Forshc
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            Button button = (Button)sender;
-            int id = Convert.ToInt32(button.Uid);
-            Myperem.ListBigChest.Add(Myperem.ListLittleChest.FirstOrDefault(x => x.Id == id));
-            Myperem.ListLittleChest.Remove(Myperem.ListLittleChest.FirstOrDefault(x => x.Id == id));
-            ListC.Items.Refresh();
+            try
+            {
+                Button button = (Button)sender;
+                int id = Convert.ToInt32(button.Uid);
+                Myperem.ListBigChest.Add(Myperem.ListLittleChest.FirstOrDefault(x => x.Id == id));
+                Myperem.ListLittleChest.Remove(Myperem.ListLittleChest.FirstOrDefault(x => x.Id == id));
+                ListC.Items.Refresh();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
+        }
+
+        private void BtnAddHistory_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                foreach (Chest chest in Myperem.ListLittleChest)
+                {
+                    History history = new History() { count = chest.CountChest, idChest = chest.Id, idUsers = CurrentUser.id, dateaddr = DateTime.Now };
+                    BaseConnect.BaseModel.History.Add(history);
+                }
+                BaseConnect.BaseModel.SaveChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
     }
 }
