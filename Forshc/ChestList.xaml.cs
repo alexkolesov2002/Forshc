@@ -33,7 +33,7 @@ namespace Forshc
         public ChestList(Users cu)
         {
             InitializeComponent();
-            Myperem.ListBigChest =  Myperem.ListBigChest.OrderBy(x => x.Id).ToList();
+            Myperem.ListBigChest = Myperem.ListBigChest.OrderBy(x => x.Id).ToList();
             ListC.ItemsSource = Myperem.ListBigChest;
             ListC.Items.Refresh();
             CountInCart = Myperem.ListLittleChest.Count;

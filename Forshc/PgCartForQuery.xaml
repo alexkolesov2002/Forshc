@@ -53,7 +53,11 @@
             <RowDefinition Height="13*"/>
             <RowDefinition Height="77*"/>
         </Grid.RowDefinitions>
-        <ListView Grid.Row="1" x:Name="ListC" ItemTemplate="{StaticResource ListS}" Margin="0,0,0,-0.4" Grid.RowSpan="2"/>
-        <Button x:Name="BtnGoBack" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Content="Назад" Click="BtnGoBack_Click"></Button>
+        <ListView Grid.Row="1" x:Name="ListC" ItemTemplate="{StaticResource ListS}" Margin="0,0,0,-0.4" Grid.RowSpan="2"></ListView>
+        <StackPanel Orientation="Horizontal"  Grid.Row="1" HorizontalAlignment="Center">
+
+            <Button x:Name="BtnGoBack" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="20" Width="200" Content="Назад" Click="BtnGoBack_Click" Cursor="Hand"></Button>
+            <Button x:Name="BtnAddHistory" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Margin="20" Content="Оставить заявку"  Cursor="Hand"></Button>
+        </StackPanel>
     </Grid>
 </Page>
