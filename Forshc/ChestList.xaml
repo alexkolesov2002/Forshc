@@ -57,7 +57,7 @@
                 <TextBox x:Name="SearchTxt" TextChanged="SearchTxt_TextChanged" materialDesign:HintAssist.Hint="Поиск по названию" Margin="10 0 0 0" MaxWidth="180" MinWidth="180" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button x:Name="SortTxt1" Click="SortTxt1_Click" Content="Сортировка по Id" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Button x:Name="SortTxt2" Click="SortTxt2_Click" Content="Сортировка по использованию" Margin="10 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <materialDesign:Badged  Badge="{Binding  CountInCart}"  Foreground="Black" HorizontalAlignment="Right"   BadgeColorZoneMode="PrimaryLight" Margin="70 10 0 0" >
+                <materialDesign:Badged  Badge="{Binding  CountInCart}"  Foreground="Black" HorizontalAlignment="Right"   BadgeColorZoneMode="PrimaryLight" Margin="70 10 0 0" x:Name="Bange" Visibility="Collapsed" >
 
                     <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"   Content="{materialDesign:PackIcon Kind=cart, Size=22}"  Background="#FFAEEA00" BorderBrush="#FFAEEA00" Foreground="Black" x:Name="BtnGoCarteAll" Click="BtnGoCarteAll_Click"   Cursor="Hand"   />
 

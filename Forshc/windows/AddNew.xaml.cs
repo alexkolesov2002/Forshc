@@ -19,8 +19,10 @@ namespace Forshc
     /// </summary>
     public partial class AddNew : Window
     {
-        public AddNew()
+        Users user;
+        public AddNew(Users CurrentUser)
         {
+            user = CurrentUser;
             InitializeComponent();
             ispBt.SelectedIndex = 0;
             StatusCB.SelectedIndex = 0;
@@ -33,7 +35,8 @@ namespace Forshc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            LoadPages.MainFrame.Navigate(new ChestList(user));
+            this.Close();
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)

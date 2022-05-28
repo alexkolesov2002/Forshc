@@ -23,11 +23,12 @@ namespace Forshc
         public Menu(Users user)
         {
             InitializeComponent();
-            LoadPages.MainFrame = FrameMain;
+     
         
             BaseConnect.BaseModel = new Entities();
             this.CurrentUser = user;
             FrameMain.Navigate(new ChestList(CurrentUser));
+            LoadPages.MainFrame = FrameMain;
             if (CurrentUser.id_role == 1)
             {
                 BtnGoWinAddUser.Visibility = Visibility.Visible;
@@ -49,20 +50,20 @@ namespace Forshc
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             new Del().ShowDialog();
-            FrameMain.Navigate(new ChestList(CurrentUser));
+          
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            new AddNew().ShowDialog();
-            FrameMain.Navigate(new ChestList(CurrentUser));
+            new AddNew(CurrentUser).ShowDialog();
+           
 
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            new Change().ShowDialog();
-            FrameMain.Navigate(new ChestList(CurrentUser));
+            new Change(CurrentUser).ShowDialog();
+           
 
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)

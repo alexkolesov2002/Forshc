@@ -41,6 +41,10 @@ namespace Forshc
                 CountInCart = Myperem.ListLittleChest.Count;
                 PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));
                 CurentUsers = cu;
+                if (cu.id_role == 2)
+                {
+                    Bange.Visibility = Visibility.Visible;
+                }
             }
             catch (Exception ex)
             {

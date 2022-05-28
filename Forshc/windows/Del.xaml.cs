@@ -19,9 +19,11 @@ namespace Forshc
     /// </summary>
     public partial class Del : Window
     {
-        public Del()
+        Users user;
+        public Del(Users CurrentUser)
         {
-            InitializeComponent();
+            LoadPages.MainFrame.Navigate(new ChestList(user));
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -56,7 +56,8 @@ namespace Forshc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            LoadPages.MainFrame.Refresh();
+            this.Close(); 
         }
     }
 }
