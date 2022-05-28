@@ -19,10 +19,12 @@ namespace Forshc
     /// </summary>
     public partial class Cart : Window
     {
+        Users user;
         int i = 0;
-        public Cart(int ident)
+        public Cart(int ident, Users users)
         {
             InitializeComponent();
+            user = users;
             i = ident;
             Chest chest = BaseConnect.BaseModel.Chest.FirstOrDefault(x => x.Id == ident);
             IdenTxt.Text = chest.Id.ToString();
@@ -56,8 +58,9 @@ namespace Forshc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            LoadPages.MainFrame.Refresh();
-            this.Close(); 
+
+            LoadPages.MainFrame.Navigate(new ChestList(user));
+            this.Close();
         }
     }
 }

@@ -22,13 +22,13 @@ namespace Forshc
         Users user;
         public Del(Users CurrentUser)
         {
-            LoadPages.MainFrame.Navigate(new ChestList(user));
-            this.Close();
+            InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            LoadPages.MainFrame.Navigate(new ChestList(user));
+            this.Close();
         }
 
         private void TopGr_MouseDown(object sender, MouseButtonEventArgs e)
