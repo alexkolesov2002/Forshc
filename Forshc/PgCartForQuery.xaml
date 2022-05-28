@@ -40,6 +40,10 @@
                     <Button  Padding="0" Uid="{Binding Id}"   Name="CountMinus" Click="CountMinus_Click">
                         <materialDesign:PackIcon Kind="Minus" Width="40" Margin="0" Padding="0"/>
                     </Button>
+
+                    <Button  Padding="0" Uid="{Binding Id}"   Name="Delete" Click="Delete_Click">
+                        <materialDesign:PackIcon Kind="DeleteEmpty" Width="40" Margin="0" Padding="0"/>
+                    </Button>
                 </StackPanel>
             </Border>
         </DataTemplate>
@@ -50,5 +54,6 @@
             <RowDefinition Height="77*"/>
         </Grid.RowDefinitions>
         <ListView Grid.Row="1" x:Name="ListC" ItemTemplate="{StaticResource ListS}" Margin="0,0,0,-0.4" Grid.RowSpan="2"/>
+        <Button x:Name="BtnGoBack" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200" Content="Назад" Click="BtnGoBack_Click"></Button>
     </Grid>
 </Page>

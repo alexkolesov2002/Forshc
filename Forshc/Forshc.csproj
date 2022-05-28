@@ -75,6 +75,7 @@
     <Compile Include="ChestList.xaml.cs">
       <DependentUpon>ChestList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Myperem.cs" />
     <Compile Include="pages\AddrUsers.xaml.cs">
       <DependentUpon>AddrUsers.xaml</DependentUpon>
     </Compile>
