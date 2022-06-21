@@ -34,9 +34,10 @@ namespace Forshc
         {
             try
             {
-                InitializeComponent();
+               
+               InitializeComponent();
                 Myperem.ListBigChest = Myperem.ListBigChest.OrderBy(x => x.Id).ToList();
-                ListC.ItemsSource = Myperem.ListBigChest;
+                ListC.ItemsSource = BaseConnect.BaseModel.Chest.ToList();
                 ListC.Items.Refresh();
                 CountInCart = Myperem.ListLittleChest.Count;
                 PropertyChanged(this, new PropertyChangedEventArgs("CountInCart"));

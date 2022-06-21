@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Forshc"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Складской учет" Icon="/res/407826.ico" Height="450" Width="800">
     <Grid Background="#9cf">
         <Border MinWidth="200"  Background="White" VerticalAlignment="Center" Padding="20" CornerRadius="20" MaxWidth="500" Height="353" >
             <Border.Effect>

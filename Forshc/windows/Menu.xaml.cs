@@ -51,20 +51,20 @@ namespace Forshc
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             new Del(CurrentUser).ShowDialog();
-          
+            FrameMain.Navigate(new ChestList(CurrentUser));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             new AddNew(CurrentUser).ShowDialog();
-           
+            FrameMain.Navigate(new ChestList(CurrentUser));
 
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             new Change(CurrentUser).ShowDialog();
-           
+            FrameMain.Navigate(new ChestList(CurrentUser));
 
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -77,6 +77,7 @@ namespace Forshc
         private void BtnCheckHistory_Click(object sender, RoutedEventArgs e)
         {
             LoadPages.MainFrame.Navigate(new PgCheckHistory());
+            
         }
     }
 }

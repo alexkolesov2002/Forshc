@@ -72,7 +72,7 @@ namespace Forshc
             }
             catch
             {
-
+                MessageBox.Show("Данное оборудование находится в заявке, списание не возможно", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
