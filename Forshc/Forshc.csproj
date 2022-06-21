@@ -218,6 +218,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Еж Видео.mp4" />
     <Resource Include="res\407826.ico" />
     <Resource Include="407826.ico" />
     <Content Include="Model1.Context.tt">
